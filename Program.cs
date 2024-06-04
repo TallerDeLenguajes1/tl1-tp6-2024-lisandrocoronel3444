@@ -36,3 +36,54 @@ static int invertirNum(int numero){
 
 
 }
+
+bool continuar = true;
+while(continuar)
+{
+            Console.WriteLine("Bienvenido a la Calculadora");
+            Console.WriteLine("Seleccione la operación que desea realizar:");
+            Console.WriteLine("1. Sumar");
+            Console.WriteLine("2. Restar");
+            Console.WriteLine("3. Multiplicar");
+            Console.WriteLine("4. Dividir");
+            Console.WriteLine("5. Salir");
+            int opcion;
+            if(!int.TryParse(Console.ReadLine(), out opcion) || opcion < 1 || opcion > 5)
+            {
+                Console.WriteLine("Opción inválida. Por favor, seleccione una opción válida.");
+                continue;
+
+            }
+            if(opcion == 5){
+                Console.WriteLine("Gracias por usar calculadora");
+                break;
+            }
+            Console.WriteLine("Ingrese el primer numero");
+            int num1; 
+            int.TryParse(Console.ReadLine(), out num1);
+            Console.WriteLine("Ingrese el segundo numero");
+            int num2;
+            int.TryParse(Console.ReadLine(), out num2);
+            int resultado; 
+            switch(opcion)
+            {
+                case 1: 
+                resultado = num1 + num2;
+                break;
+                case 2:
+                resultado = num1 - num2;
+                break;
+                case 3:
+                resultado = num1 * num2;
+                break;
+                case 4:
+                resultado = num1 / num2;
+                break;
+                default:
+                Console.WriteLine("Opcion invalida");
+                continue;
+
+            }
+            Console.WriteLine("El resultado es: " + resultado);
+
+}
