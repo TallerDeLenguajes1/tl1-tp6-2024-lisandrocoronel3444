@@ -199,3 +199,73 @@ bool continuar = true;
                 continuar = false;
             }
         }
+
+
+//  EJERCICIO 4
+
+
+Console.WriteLine("Ingrese una cadena de texto: ");
+String cadena = Console.ReadLine();
+
+int longitud = cadena.Length;
+Console.WriteLine("La longitud es: " + longitud);
+
+Console.WriteLine("Ingrese otra cadena :");
+String cadena2 = Console.ReadLine();
+Console.WriteLine("Cadenas concatenadas: " + cadena + cadena2);
+
+Console.WriteLine("Ingrese el numero de incio para la subcadena: ");
+int inicio;
+int.TryParse(Console.ReadLine(), out inicio);
+
+Console.WriteLine("Ingrese la longitud: ");
+int longiSubCadena;
+int.TryParse(Console.ReadLine(), out longiSubCadena);
+ if (inicio < 0 || inicio >= longitud || longiSubCadena < 0 || inicio + longiSubCadena > longitud)
+        {
+            Console.WriteLine("Los valores ingresados no son válidos.");
+        }
+        else
+        {
+            // Extraer la subcadena
+            string subcadena = cadena.Substring(inicio, longiSubCadena);
+
+            // Mostrar la subcadena por pantalla
+            Console.WriteLine("La subcadena es: " + subcadena);
+        }
+
+foreach (char caracter in cadena)
+        {
+            Console.WriteLine(caracter);
+        }
+
+Console.WriteLine("Ingresa la palabra a buscar:");
+String palabra = Console.ReadLine();
+bool contienePalabra = cadena.Contains(palabra);
+
+        // Mostrar el resultado de la búsqueda
+        if (contienePalabra)
+        {
+            Console.WriteLine($"La palabra '{palabra}' se encontró en la cadena de texto.");
+        }
+        else
+        {
+            Console.WriteLine($"La palabra '{palabra}' no se encontró en la cadena de texto.");
+        }
+
+        // Convertir la cadena a mayúsculas
+        string textoMayusculas = cadena.ToUpper();
+        Console.WriteLine($"Texto en mayúsculas: {textoMayusculas}");
+
+        // Convertir la cadena a minúsculas
+        string textoMinusculas = cadena.ToLower();
+        Console.WriteLine($"Texto en minúsculas: {textoMinusculas}");
+
+        Console.WriteLine("Ingrese una cadena de texto separada por ';':");
+        string cadenaSeparada = Console.ReadLine();
+
+        // Usar el método Split() en el foreach directamente
+        foreach (string fruta in cadenaSeparada.Split(';'))
+        {
+            Console.WriteLine(fruta);
+        }
